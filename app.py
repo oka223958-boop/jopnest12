@@ -71,7 +71,6 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         log.warning(f"Could not load courses: {e}")
 
-<<<<<<< HEAD
     # Normalize experience_required everywhere (fixes Excel-corrupted "5-Feb" → "2-5")
     from utils.data_loader import _fix_experience
     if "experience_required" in jobs.columns:
@@ -82,7 +81,6 @@ async def lifespan(app: FastAPI):
             engine.content_model.jobs_ref["experience_required"].apply(_fix_experience)
 
 =======
->>>>>>> 232f31a7c90ab4e785257eec9cb8d78e80333078
     init_routes(engine, users, jobs, courses)
     log.info("JobNest API is ready!")
 
