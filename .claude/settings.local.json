@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pip install fastapi uvicorn[standard] pandas numpy scikit-learn pydantic python-dotenv google-generativeai scipy)",
+      "Bash(pkill -f \"uvicorn\")",
+      "Bash(python -m uvicorn app:app --host 0.0.0.0 --port 8000)",
+      "Bash(curl -s http://127.0.0.1:8000/api/health)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/chat -H \"Content-Type: application/json\" -d '{\"message\":\"عايز وظيفة javascript remote\",\"user_id\":1307,\"top_n\":2,\"context\":[]}')"
+    ]
+  }
+}

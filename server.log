@@ -1,0 +1,1238 @@
+﻿python : D:\jobnest\api\routes.py:147: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` 
+instead
+At line:1 char:28
++ ... :\jobnest"; python -m uvicorn app:app --host 0.0.0.0 --port 8000 2>&1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\jobnest\api\...amples` instead:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  def search_users(name: str = Query(..., example="Magdy"), limit: int = Query(10, ge=1, le=50)):
+INFO:     Started server process [9640]
+INFO:     Waiting for application startup.
+2026-06-16 23:37:47 | INFO     | app | Loading recommendation engine...
+2026-06-16 23:37:47 | INFO     | models.content_model | ContentBasedRecommender initialized
+2026-06-16 23:37:47 | INFO     | models.ml_model | JobMatchClassifier initialized (RF + GB)
+2026-06-16 23:37:47 | INFO     | models.hybrid_engine | HybridRecommendationEngine initialized
+2026-06-16 23:37:47 | INFO     | models.content_model | ContentBasedRecommender loaded from disk ✓
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 97: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in 
+<module>
+    uvicorn.main()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1524, in 
+__call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in 
+run_until_complete
+    self.run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in 
+run_forever
+    super().run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in 
+main
+    await app(scope, self.receive, self.send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 
+29, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1162, 
+in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, 
+in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", 
+line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 
+80, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", 
+line 49, in __call__
+    await self.app(scope, receive, send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 
+18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 660, in 
+__call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 669, in 
+app
+    await self.lifespan(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 638, in 
+lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 225, in 
+merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "D:\jobnest\app.py", line 32, in lifespan
+    engine.load()
+  File "D:\jobnest\models\hybrid_engine.py", line 139, in load
+    self.content_model.load()
+  File "D:\jobnest\models\content_model.py", line 214, in load
+    log.info("ContentBasedRecommender loaded from disk \u2713")
+Message: 'ContentBasedRecommender loaded from disk \u2713'
+Arguments: ()
+2026-06-16 23:37:47 | INFO     | models.ml_model | JobMatchClassifier loaded from disk ✓
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 87: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in 
+<module>
+    uvicorn.main()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1524, in 
+__call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in 
+run_until_complete
+    self.run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in 
+run_forever
+    super().run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in 
+main
+    await app(scope, self.receive, self.send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 
+29, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1162, 
+in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, 
+in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", 
+line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 
+80, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", 
+line 49, in __call__
+    await self.app(scope, receive, send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 
+18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 660, in 
+__call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 669, in 
+app
+    await self.lifespan(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 638, in 
+lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 225, in 
+merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "D:\jobnest\app.py", line 32, in lifespan
+    engine.load()
+  File "D:\jobnest\models\hybrid_engine.py", line 140, in load
+    self.ml_model.load()
+  File "D:\jobnest\models\ml_model.py", line 213, in load
+    log.info("JobMatchClassifier loaded from disk \u2713")
+Message: 'JobMatchClassifier loaded from disk \u2713'
+Arguments: ()
+2026-06-16 23:37:47 | INFO     | models.hybrid_engine | HybridRecommendationEngine loaded ✓
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 90: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in 
+<module>
+    uvicorn.main()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1524, in 
+__call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in 
+run_until_complete
+    self.run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in 
+run_forever
+    super().run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in 
+main
+    await app(scope, self.receive, self.send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 
+29, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1162, 
+in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, 
+in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", 
+line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 
+80, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", 
+line 49, in __call__
+    await self.app(scope, receive, send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 
+18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 660, in 
+__call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 669, in 
+app
+    await self.lifespan(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 638, in 
+lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 225, in 
+merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "D:\jobnest\app.py", line 32, in lifespan
+    engine.load()
+  File "D:\jobnest\models\hybrid_engine.py", line 141, in load
+    log.info("HybridRecommendationEngine loaded \u2713")
+Message: 'HybridRecommendationEngine loaded \u2713'
+Arguments: ()
+2026-06-16 23:37:47 | INFO     | app | Models loaded from disk
+2026-06-16 23:37:47 | INFO     | app | Loading data tables...
+2026-06-16 23:37:47 | INFO     | utils.data_loader | Loading dataset from D:\jobnest\data\jobnest_enhanced_dataset.csv ...
+2026-06-16 23:37:50 | INFO     | utils.data_loader | Column validation passed ✓
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 78: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in 
+<module>
+    uvicorn.main()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1524, in 
+__call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in 
+run_until_complete
+    self.run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in 
+run_forever
+    super().run_forever()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\lifespan\on.py", line 86, in 
+main
+    await app(scope, self.receive, self.send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 
+29, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1162, 
+in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, 
+in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", 
+line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\cors.py", line 
+80, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\exceptions.py", 
+line 49, in __call__
+    await self.app(scope, receive, send)
+  File 
+"C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 
+18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 660, in 
+__call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 669, in 
+app
+    await self.lifespan(scope, receive, send)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\routing.py", line 638, in 
+lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\routing.py", line 225, in 
+merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+  File "D:\jobnest\app.py", line 38, in lifespan
+    df    = load_dataset()
+  File "D:\jobnest\utils\data_loader.py", line 57, in load_dataset
+    _validate_columns(df)
+  File "D:\jobnest\utils\data_loader.py", line 134, in _validate_columns
+    log.info("Column validation passed \u2713")
+Message: 'Column validation passed \u2713'
+Arguments: ()
+2026-06-16 23:37:50 | INFO     | utils.data_loader | Dataset loaded: 195,000 rows × 40 columns
+2026-06-16 23:37:50 | INFO     | utils.persistence | Loaded users from cache: 15,001 users
+2026-06-16 23:37:50 | INFO     | app | Users loaded from cache: 15,001 rows (includes added users)
+2026-06-16 23:37:50 | INFO     | utils.persistence | Loaded jobs from cache: 1,990 jobs
+2026-06-16 23:37:50 | INFO     | app | Jobs loaded from cache: 1,990 rows (includes added jobs)
+2026-06-16 23:37:50 | INFO     | app | Courses loaded from CSV: 2000 courses
+2026-06-16 23:37:50 | INFO     | chatbot.engine | ChatbotEngine v3.0 initialized
+2026-06-16 23:37:50 | INFO     | api.routes | Routes initialized
+2026-06-16 23:37:50 | INFO     | app | JobNest API is ready!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58182 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58182 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60764 - "GET /api/health HTTP/1.1" 200 OK
+2026-06-16 23:38:41 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:38:42 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.2024
+INFO:     127.0.0.1:64706 - "POST /api/chat HTTP/1.1" 200 OK
+2026-06-16 23:39:10 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:39:10 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.2024
+INFO:     127.0.0.1:50848 - "POST /api/chat HTTP/1.1" 200 OK
+2026-06-16 23:39:26 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:39:26 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.2024
+INFO:     127.0.0.1:54499 - "POST /api/chat HTTP/1.1" 200 OK
+2026-06-16 23:39:44 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:39:44 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.2024
+INFO:     127.0.0.1:54500 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64076 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64076 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59284 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59284 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50764 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50764 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50545 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50545 - "GET /openapi.json HTTP/1.1" 200 OK
+2026-06-16 23:42:25 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:42:25 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.1914
+INFO:     127.0.0.1:60892 - "POST /api/chat HTTP/1.1" 200 OK
+2026-06-16 23:43:14 | INFO     | models.hybrid_engine | Generating hybrid recommendations for user_id=1307 ...
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+C:\Users\yousre\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py:2684: 
+UserWarning: X has feature names, but StandardScaler was fitted without feature names
+  warnings.warn(
+2026-06-16 23:43:14 | INFO     | models.hybrid_engine | Recommendations ready: top score=0.2024
+INFO:     127.0.0.1:54726 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52844 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52844 - "GET /openapi.json HTTP/1.1" 200 OK

@@ -1,0 +1,23 @@
+# ──────────────────────────────────────────────
+#  JobNest  —  Python Dependencies
+# ──────────────────────────────────────────────
+#  Install with:
+#      pip install -r requirements.txt
+# ──────────────────────────────────────────────
+
+# Data
+pandas
+numpy
+
+# Machine Learning
+scikit-learn
+
+# API  (FastAPI replaces Flask)
+fastapi
+uvicorn[standard]
+pydantic
+
+# Utilities
+python-dotenv==1.0.1
+
+google-generativeai
