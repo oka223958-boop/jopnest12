@@ -1,13 +1,10 @@
 """
-==============================================================
   app.py  —  FastAPI Application Entry Point
-==============================================================
   Run:
       uvicorn app:app --reload --host 0.0.0.0 --port 8000
 
   Swagger UI (test from browser):
       http://127.0.0.1:8000/docs
-==============================================================
 """
 
 from contextlib import asynccontextmanager
@@ -80,7 +77,6 @@ async def lifespan(app: FastAPI):
         engine.content_model.jobs_ref["experience_required"] = \
             engine.content_model.jobs_ref["experience_required"].apply(_fix_experience)
 
-=======
     init_routes(engine, users, jobs, courses)
     log.info("JobNest API is ready!")
 
