@@ -1,100 +1,4 @@
 """
-==============================================================
-  models/hybrid_engine.py  —  Hybrid Recommendation Engine
-==============================================================
-  Combines TWO recommendation signals into one final score:
-
-    final_score = (CONTENT_WEIGHT × tfidf_score)
-                + (ML_WEIGHT      × ml_probability)
-
-  Where:
-    • tfidf_score    = cosine similarity from ContentBasedRecommender
-    • ml_probability = P(good_match) from JobMatchClassifier
-
-  Both weights are configured in config/settings.py.
-  Default: 40% content + 60% ML  (ML tends to be more precise)
-
-  This module is the SINGLE entry point for getting recommendations.
-  The API only calls HybridRecommendationEngine.recommend().
-==============================================================
-"""
-
-import pandas as pd
-import numpy as np
-
-from config.settings import (
-    CONTENT_WEIGHT,
-    ML_WEIGHT,
-    TOP_N_RECOMMENDATIONS,
-    NUMERIC_FEATURES,
-)
-from models.content_model import ContentBasedRecommender
-from models.ml_model import JobMatchClassifier
-from utils.feature_engineering import _skill_match, _job_type_match, _parse_salary_range, _parse_exp_min
-from utils.logger import get_logger
-
-log = get_logger(__name__)
-
-
-class HybridRecommendationEngine:
-    """
-    Orchestrates TF-IDF + ML models into a single hybrid system.
-
-    Lifecycle:
-        engine = HybridRecommendationEngine()
-        engine.load()                    # load saved models
-        results = engine.recommend(user) # get recommendations
-
-    Or after training:
-        engine.content_model.fit(jobs)
-        engine.ml_model.fit(df)
-        engine.save()
-    """
-
-    def __init__(self):
-        self.content_model = ContentBasedRecommender()
-        self.ml_model      = JobMatchClassifier()
-        log.info("HybridRecommendationEngine initialized")
-
-    # ──────────────────────────────────────────────────────────
-    #  RECOMMEND  (main public method called by API)
-    # ──────────────────────────────────────────────────────────
-
-    def recommend(
-        self,
-        user: pd.Series,
-        jobs: pd.DataFrame,
-        top_n: int = TOP_N_RECOMMENDATIONS,
-    ) -> pd.DataFrame:
-        """
-        Return top-N job recommendations for a user.
-
-        Process:
-          1. Content model scores ALL jobs by cosine similarity.
-          2. ML model re-scores the top-50 candidates.
-          3. Final score = weighted combination.
-          4. Sort descending → return top_n rows.
-
-        Args:
-            user  : User profile as a pandas Series.
-            jobs  : Full jobs DataFrame (from load_jobs()).
-            top_n : Number of results to return (default 10).
-
-        Returns:
-            DataFrame with job columns + scores + final_score,
-            sorted by final_score descending.
-        """
-        log.info(
-            f"Generating hybrid recommendations for "
-            f"user_id={user.get('user_id', '?')} ..."
-        )
-
-        # ── Step 1: Content-based pre-filtering ───────────────
-<<<<<<< HEAD
-=======
-        # Get top-50 candidates via TF-IDF cosine similarity.
-        # This dramatically reduces ML inference calls.
->>>>>>> 232f31a7c90ab4e785257eec9cb8d78e80333078
         content_candidates = self.content_model.recommend(user, top_n=50)
 
         # ── Step 2: ML scoring of candidates ──────────────────
@@ -108,7 +12,6 @@ class HybridRecommendationEngine:
             ML_WEIGHT      * content_candidates["ml_score"]
         ).round(4)
 
-<<<<<<< HEAD
         # ── Step 4: Apply chatbot filters, sort and return top-N ──
         if jobs is not None and len(jobs) < len(self.content_model.jobs_ref):
             allowed_ids = set(str(i) for i in jobs["job_id"].tolist())
@@ -117,9 +20,6 @@ class HybridRecommendationEngine:
             if not filtered_candidates.empty:
                 content_candidates = filtered_candidates
 
-=======
-        # ── Step 4: Sort and return top-N ─────────────────────
->>>>>>> 232f31a7c90ab4e785257eec9cb8d78e80333078
         result = (
             content_candidates
             .sort_values("final_score", ascending=False)
