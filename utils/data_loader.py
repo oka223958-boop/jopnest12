@@ -51,12 +51,9 @@ def load_dataset() -> pd.DataFrame:
         )
 
     log.info(f"Loading dataset from {path} ...")
-<<<<<<< HEAD
     df = pd.read_csv(path, low_memory=False, dtype={"experience_required": str})
     df["experience_required"] = df["experience_required"].apply(_fix_experience)
-=======
     df = pd.read_csv(path, low_memory=False)
->>>>>>> 232f31a7c90ab4e785257eec9cb8d78e80333078
 
     # ── Basic validation ──────────────────────────────────────
     _validate_columns(df)
